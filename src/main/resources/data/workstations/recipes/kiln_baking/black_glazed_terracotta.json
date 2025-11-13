@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:kiln_baking",
+  "cookingtime": 100,
+  "experience": 0.4,
+  "ingredient": {
+    "item": "minecraft:black_terracotta"
+  },
+  "result": {
+    "item": "minecraft:black_glazed_terracotta"
+  }
+}
