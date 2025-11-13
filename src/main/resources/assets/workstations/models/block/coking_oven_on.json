@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "workstations:block/coking_oven_front_on",
+    "side": "workstations:block/coking_oven_side",
+    "top": "workstations:block/coking_oven_top"
+  }
+}

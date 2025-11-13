@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "workstations:block/glassblower_front",
+    "side": "workstations:block/glassblower_side",
+    "top": "workstations:block/glassblower_top"
+  }
+}
