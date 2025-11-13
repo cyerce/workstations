@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:kiln_baking",
+  "type": "minecraft:glassblowing",
   "cookingtime": 100,
   "experience": 0.4,
   "ingredient": {
