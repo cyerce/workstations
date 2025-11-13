@@ -2,7 +2,7 @@ package net.aepherastudios.workstations.block.entity;
 
 import net.aepherastudios.workstations.block.IWBlockEntities;
 import net.aepherastudios.workstations.client.menu.custom.KilnMenu;
-import net.aepherastudios.workstations.recipe.IWRecipeTypes;
+import net.aepherastudios.workstations.recipe.recipies.KilnRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Inventory;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class KilnBlockEntity extends AbstractFurnaceBlockEntity {
     public KilnBlockEntity(BlockPos pPos, BlockState pBlockState) {
-        super(IWBlockEntities.KILN_BE.get(), pPos, pBlockState, IWRecipeTypes.KILN_BAKING);
+        super(IWBlockEntities.KILN_BE.get(), pPos, pBlockState, KilnRecipe.Type.INSTANCE);
     }
 
     protected Component getDefaultName() {
@@ -22,7 +22,7 @@ public class KilnBlockEntity extends AbstractFurnaceBlockEntity {
 
 
     protected AbstractContainerMenu createMenu(int pId, Inventory pPlayer) {
-        return new KilnMenu(pId, pPlayer, this, this.dataAccess);
+        return new KilnMenu(pId, pPlayer, this, dataAccess);
     }
 
     protected int getBurnDuration(ItemStack pFuel) {

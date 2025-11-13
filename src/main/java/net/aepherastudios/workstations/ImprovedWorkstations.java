@@ -3,8 +3,9 @@ package net.aepherastudios.workstations;
 import com.mojang.logging.LogUtils;
 import net.aepherastudios.workstations.block.IWBlockEntities;
 import net.aepherastudios.workstations.block.IWBlocks;
+import net.aepherastudios.workstations.client.IWMenuTypes;
 import net.aepherastudios.workstations.item.IWItems;
-import net.aepherastudios.workstations.recipe.IWRecipeTypes;
+import net.aepherastudios.workstations.recipe.IWRecipies;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -30,6 +31,8 @@ public class ImprovedWorkstations {
         IWItems.register(modEventBus);
         IWBlocks.register(modEventBus);
         IWBlockEntities.register(modEventBus);
+        IWRecipies.register(modEventBus);
+        IWMenuTypes.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
