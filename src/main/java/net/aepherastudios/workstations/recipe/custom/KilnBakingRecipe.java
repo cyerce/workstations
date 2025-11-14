@@ -1,4 +1,4 @@
-package net.aepherastudios.workstations.recipe.recipies;
+package net.aepherastudios.workstations.recipe.custom;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -12,8 +12,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 
-public class KilnRecipe extends AbstractCookingRecipe {
-    public KilnRecipe(ResourceLocation pId, String pGroup, CookingBookCategory pCategory, Ingredient pIngredient, ItemStack pResult, float pExperience, int pCookingTime) {
+public class KilnBakingRecipe extends AbstractCookingRecipe {
+    public KilnBakingRecipe(ResourceLocation pId, String pGroup, CookingBookCategory pCategory, Ingredient pIngredient, ItemStack pResult, float pExperience, int pCookingTime) {
         super(Type.INSTANCE, pId, pGroup, pCategory, pIngredient, pResult, pExperience, pCookingTime);
     }
 
@@ -32,20 +32,20 @@ public class KilnRecipe extends AbstractCookingRecipe {
         return Serializer.INSTANCE;
     }
 
-    public static class Type implements RecipeType<KilnRecipe> {
+    public static class Type implements RecipeType<KilnBakingRecipe> {
         public static final Type INSTANCE = new Type();
     }
 
-    public static class Serializer implements RecipeSerializer<KilnRecipe> {
+    public static class Serializer implements RecipeSerializer<KilnBakingRecipe> {
         private final int defaultCookingTime;
-        public static final KilnRecipe.Serializer INSTANCE = new Serializer(50);
+        public static final KilnBakingRecipe.Serializer INSTANCE = new Serializer(50);
 
         public Serializer(int defaultCookingTime){
             this.defaultCookingTime = defaultCookingTime;
         }
 
 
-        public KilnRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public KilnBakingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             String s = GsonHelper.getAsString(pJson, "group", "");
             CookingBookCategory cookingbookcategory = (CookingBookCategory)CookingBookCategory.CODEC.byName(GsonHelper.getAsString(pJson, "category", (String)null), CookingBookCategory.MISC);
             JsonElement jsonelement = (JsonElement)(GsonHelper.isArrayNode(pJson, "ingredient") ? GsonHelper.getAsJsonArray(pJson, "ingredient") : GsonHelper.getAsJsonObject(pJson, "ingredient"));
@@ -64,21 +64,21 @@ public class KilnRecipe extends AbstractCookingRecipe {
 
                 float f = GsonHelper.getAsFloat(pJson, "experience", 0.0F);
                 int i = GsonHelper.getAsInt(pJson, "cookingtime", this.defaultCookingTime);
-                return new KilnRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
+                return new KilnBakingRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
             }
         }
 
-        public KilnRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public KilnBakingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             String s = pBuffer.readUtf();
             CookingBookCategory cookingbookcategory = (CookingBookCategory)pBuffer.readEnum(CookingBookCategory.class);
             Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
             ItemStack itemstack = pBuffer.readItem();
             float f = pBuffer.readFloat();
             int i = pBuffer.readVarInt();
-            return new KilnRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
+            return new KilnBakingRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
         }
 
-        public void toNetwork(FriendlyByteBuf pBuffer, KilnRecipe pRecipe) {
+        public void toNetwork(FriendlyByteBuf pBuffer, KilnBakingRecipe pRecipe) {
             pBuffer.writeUtf(pRecipe.group);
             pBuffer.writeEnum(pRecipe.category());
             pRecipe.ingredient.toNetwork(pBuffer);

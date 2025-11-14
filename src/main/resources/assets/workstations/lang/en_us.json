@@ -1,0 +1,29 @@
+{
+
+  "item.workstations.blast_clay": "Blast Clay",
+  "item.workstations.blast_brick": "Blast Bricks",
+
+
+
+  "block.workstations.blast_bricks": "Blast Bricks",
+
+  "block.workstations.kiln": "Kiln",
+  "block.workstations.coking_oven": "Coking Oven",
+  "block.workstations.glassblower": "Glassblower",
+
+
+
+  "container.workstations.kiln": "Kiln",
+  "container.workstations.coking_oven": "Coking Oven",
+  "container.workstations.glassblower": "Glassblower",
+
+
+
+  "creativetab.workstations": "Improved Workstations",
+
+
+
+  "gui.workstations.category.kiln_baking": "Kiln Baking",
+  "gui.workstations.category.coking": "Coking",
+  "gui.workstations.category.glassblowing": "Glassblowing"
+}

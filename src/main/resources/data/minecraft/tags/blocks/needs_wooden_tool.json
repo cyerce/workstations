@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "workstations:blast_bricks",
+    "workstations:kiln",
+    "workstations:coking_oven",
+    "workstations:glassblower"
+  ]
+}

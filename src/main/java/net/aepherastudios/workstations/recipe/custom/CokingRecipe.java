@@ -1,4 +1,4 @@
-package net.aepherastudios.workstations.recipe.recipies;
+package net.aepherastudios.workstations.recipe.custom;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -12,9 +12,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 
-public class CokingOvenRecipe extends AbstractCookingRecipe {
-    public CokingOvenRecipe(ResourceLocation pId, String pGroup, CookingBookCategory pCategory, Ingredient pIngredient, ItemStack pResult, float pExperience, int pCookingTime) {
-        super(CokingOvenRecipe.Type.INSTANCE, pId, pGroup, pCategory, pIngredient, pResult, pExperience, pCookingTime);
+public class CokingRecipe extends AbstractCookingRecipe {
+    public CokingRecipe(ResourceLocation pId, String pGroup, CookingBookCategory pCategory, Ingredient pIngredient, ItemStack pResult, float pExperience, int pCookingTime) {
+        super(Type.INSTANCE, pId, pGroup, pCategory, pIngredient, pResult, pExperience, pCookingTime);
     }
 
     @Override
@@ -32,20 +32,20 @@ public class CokingOvenRecipe extends AbstractCookingRecipe {
         return Serializer.INSTANCE;
     }
 
-    public static class Type implements RecipeType<CokingOvenRecipe> {
-        public static final CokingOvenRecipe.Type INSTANCE = new CokingOvenRecipe.Type();
+    public static class Type implements RecipeType<CokingRecipe> {
+        public static final Type INSTANCE = new Type();
     }
 
-    public static class Serializer implements RecipeSerializer<CokingOvenRecipe> {
+    public static class Serializer implements RecipeSerializer<CokingRecipe> {
         private final int defaultCookingTime;
-        public static final CokingOvenRecipe.Serializer INSTANCE = new CokingOvenRecipe.Serializer(50);
+        public static final CokingRecipe.Serializer INSTANCE = new Serializer(50);
 
         public Serializer(int defaultCookingTime){
             this.defaultCookingTime = defaultCookingTime;
         }
 
 
-        public CokingOvenRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
+        public CokingRecipe fromJson(ResourceLocation pRecipeId, JsonObject pJson) {
             String s = GsonHelper.getAsString(pJson, "group", "");
             CookingBookCategory cookingbookcategory = (CookingBookCategory)CookingBookCategory.CODEC.byName(GsonHelper.getAsString(pJson, "category", (String)null), CookingBookCategory.MISC);
             JsonElement jsonelement = (JsonElement)(GsonHelper.isArrayNode(pJson, "ingredient") ? GsonHelper.getAsJsonArray(pJson, "ingredient") : GsonHelper.getAsJsonObject(pJson, "ingredient"));
@@ -64,21 +64,21 @@ public class CokingOvenRecipe extends AbstractCookingRecipe {
 
                 float f = GsonHelper.getAsFloat(pJson, "experience", 0.0F);
                 int i = GsonHelper.getAsInt(pJson, "cookingtime", this.defaultCookingTime);
-                return new CokingOvenRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
+                return new CokingRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
             }
         }
 
-        public CokingOvenRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
+        public CokingRecipe fromNetwork(ResourceLocation pRecipeId, FriendlyByteBuf pBuffer) {
             String s = pBuffer.readUtf();
             CookingBookCategory cookingbookcategory = (CookingBookCategory)pBuffer.readEnum(CookingBookCategory.class);
             Ingredient ingredient = Ingredient.fromNetwork(pBuffer);
             ItemStack itemstack = pBuffer.readItem();
             float f = pBuffer.readFloat();
             int i = pBuffer.readVarInt();
-            return new CokingOvenRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
+            return new CokingRecipe(pRecipeId, s, cookingbookcategory, ingredient, itemstack, f, i);
         }
 
-        public void toNetwork(FriendlyByteBuf pBuffer, CokingOvenRecipe pRecipe) {
+        public void toNetwork(FriendlyByteBuf pBuffer, CokingRecipe pRecipe) {
             pBuffer.writeUtf(pRecipe.group);
             pBuffer.writeEnum(pRecipe.category());
             pRecipe.ingredient.toNetwork(pBuffer);

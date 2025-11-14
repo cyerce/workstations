@@ -1,7 +1,7 @@
 {
-  "type": "minecraft:coking",
-  "cookingtime": 100,
-  "experience": 0.4,
+  "type": "workstations:coking",
+  "cookingtime": 400,
+  "experience": 0.8,
   "ingredient": {
     "item": "minecraft:coal"
   },

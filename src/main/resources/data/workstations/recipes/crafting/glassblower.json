@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "forge:gems/quartz"
+    },
+    "$": {
+      "item": "minecraft:furnace"
+    },
+    "%": {
+      "tag": "forge:ingots/iron"
+    },
+    "!": {
+      "item": "workstations:blast_brick"
+    }
+  },
+  "pattern": [
+    "#%#",
+    "%$%",
+    "!!!"
+  ],
+  "result": {
+    "item": "workstations:glassblower"
+  }
+}

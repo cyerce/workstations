@@ -1,6 +1,8 @@
 package net.aepherastudios.workstations.block;
 
 import net.aepherastudios.workstations.ImprovedWorkstations;
+import net.aepherastudios.workstations.block.custom.CokingOvenBlock;
+import net.aepherastudios.workstations.block.custom.GlassblowerBlock;
 import net.aepherastudios.workstations.block.custom.KilnBlock;
 import net.aepherastudios.workstations.item.IWItems;
 import net.minecraft.world.item.BlockItem;
@@ -22,12 +24,15 @@ public class IWBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, ImprovedWorkstations.MOD_ID);
 
 
+    public static final RegistryObject<Block> BLAST_BRICKS = registerBlock("blast_bricks",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+
     public static final RegistryObject<Block> KILN = registerBlock("kiln",
             () -> new KilnBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final RegistryObject<Block> GLASSBLOWER = registerBlock("glassblower",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            () -> new GlassblowerBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
     public static final RegistryObject<Block> COKING_OVEN = registerBlock("coking_oven",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
+            () -> new CokingOvenBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(1f).requiresCorrectToolForDrops().sound(SoundType.STONE)));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

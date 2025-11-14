@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "workstations:blast_brick"
+    },
+    "$": {
+      "item": "minecraft:furnace"
+    },
+    "%": {
+      "tag": "forge:ingots/iron"
+    },
+    "!": {
+      "item": "minecraft:smooth_stone"
+    }
+  },
+  "pattern": [
+    "#%#",
+    "%$%",
+    "!!!"
+  ],
+  "result": {
+    "item": "workstations:coking_oven"
+  }
+}

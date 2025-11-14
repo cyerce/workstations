@@ -2,7 +2,7 @@ package net.aepherastudios.workstations.client.screen.custom;
 
 import net.aepherastudios.workstations.ImprovedWorkstations;
 import net.aepherastudios.workstations.client.menu.custom.KilnMenu;
-import net.aepherastudios.workstations.recipe.recipies.books.KilnBakingRecipeBookComponent;
+import net.aepherastudios.workstations.recipe.books.KilnBakingRecipeBookComponent;
 import net.minecraft.client.gui.screens.inventory.AbstractFurnaceScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

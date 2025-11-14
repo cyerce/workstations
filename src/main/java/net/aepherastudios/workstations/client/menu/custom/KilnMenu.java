@@ -1,17 +1,11 @@
 package net.aepherastudios.workstations.client.menu.custom;
 
 import net.aepherastudios.workstations.client.IWMenuTypes;
-import net.aepherastudios.workstations.recipe.recipies.KilnRecipe;
-import net.aepherastudios.workstations.recipe.recipies.books.KilnBakingRecipeBookComponent;
+import net.aepherastudios.workstations.recipe.custom.KilnBakingRecipe;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.Container;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.AbstractFurnaceMenu;
-import net.minecraft.world.inventory.ContainerData;
-import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.inventory.RecipeBookType;
-import net.minecraft.world.item.crafting.AbstractCookingRecipe;
-import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.inventory.*;
 
 public class KilnMenu extends AbstractFurnaceMenu {
     public KilnMenu(int pContainerId, Inventory pPlayerInventory, FriendlyByteBuf friendlyByteBuf) {
@@ -19,11 +13,11 @@ public class KilnMenu extends AbstractFurnaceMenu {
     }
 
     public KilnMenu(int pContainerId, Inventory pPlayerInventory, Container container, ContainerData data) {
-        super(IWMenuTypes.KILN_MENU.get(), KilnRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory, container, data);
+        super(IWMenuTypes.KILN_MENU.get(), KilnBakingRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory, container, data);
     }
 
     public KilnMenu(int pContainerId, Inventory pPlayerInventory) {
-        super(IWMenuTypes.KILN_MENU.get(), KilnRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory);
+        super(IWMenuTypes.KILN_MENU.get(), KilnBakingRecipe.Type.INSTANCE, RecipeBookType.FURNACE, pContainerId, pPlayerInventory);
     }
 
 }

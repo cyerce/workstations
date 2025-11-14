@@ -1,11 +1,11 @@
-package net.aepherastudios.workstations.recipe.recipies.books;
+package net.aepherastudios.workstations.recipe.books;
 
 import net.minecraft.client.gui.screens.recipebook.AbstractFurnaceRecipeBookComponent;
 import net.minecraft.world.item.Item;
 
 import java.util.Set;
 
-public class GlassblowingRecipebookComponent extends AbstractFurnaceRecipeBookComponent {
+public class CokingRecipeBookComponent extends AbstractFurnaceRecipeBookComponent {
     @Override
     protected Set<Item> getFuelItems() {
         return Set.of();

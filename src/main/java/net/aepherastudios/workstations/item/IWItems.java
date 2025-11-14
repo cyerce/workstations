@@ -14,6 +14,9 @@ public class IWItems {
 
     public static final RegistryObject<Item> MULTIBLOCK_HAMMER = ITEMS.register("multiblock_hammer", () -> new MultiblockHammerItem(new Item.Properties()));
 
+    public static final RegistryObject<Item> BLAST_CLAY = ITEMS.register("blast_clay", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BLAST_BRICK = ITEMS.register("blast_brick", () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

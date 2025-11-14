@@ -1,4 +1,4 @@
-package net.aepherastudios.workstations.recipe.recipies.books;
+package net.aepherastudios.workstations.recipe.books;
 
 import net.minecraft.client.gui.screens.recipebook.AbstractFurnaceRecipeBookComponent;
 import net.minecraft.world.item.Item;

@@ -7,10 +7,10 @@ import net.aepherastudios.workstations.client.IWMenuTypes;
 import net.aepherastudios.workstations.client.screen.custom.CokingOvenScreen;
 import net.aepherastudios.workstations.client.screen.custom.GlassblowerScreen;
 import net.aepherastudios.workstations.client.screen.custom.KilnScreen;
+import net.aepherastudios.workstations.item.IWCreativeModeTabs;
 import net.aepherastudios.workstations.item.IWItems;
-import net.aepherastudios.workstations.recipe.IWRecipies;
+import net.aepherastudios.workstations.recipe.IWRecipes;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -36,8 +36,9 @@ public class ImprovedWorkstations {
         IWItems.register(modEventBus);
         IWBlocks.register(modEventBus);
         IWBlockEntities.register(modEventBus);
-        IWRecipies.register(modEventBus);
+        IWRecipes.register(modEventBus);
         IWMenuTypes.register(modEventBus);
+        IWCreativeModeTabs.register(modEventBus);
 
 
         MinecraftForge.EVENT_BUS.register(this);
