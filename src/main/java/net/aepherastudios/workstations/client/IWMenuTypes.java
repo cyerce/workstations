@@ -1,6 +1,8 @@
 package net.aepherastudios.workstations.client;
 
 import net.aepherastudios.workstations.ImprovedWorkstations;
+import net.aepherastudios.workstations.client.menu.custom.CokingOvenMenu;
+import net.aepherastudios.workstations.client.menu.custom.GlassblowerMenu;
 import net.aepherastudios.workstations.client.menu.custom.KilnMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -14,6 +16,12 @@ import net.minecraftforge.registries.RegistryObject;
 public class IWMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, ImprovedWorkstations.MOD_ID);
+
+    public static final RegistryObject<MenuType<CokingOvenMenu>> COKING_OVEN_MENU =
+            regesterMenuType(CokingOvenMenu::new, "coking_oven_menu");
+
+    public static final RegistryObject<MenuType<GlassblowerMenu>> GLASSBLOWER_MENU =
+            regesterMenuType(GlassblowerMenu::new, "glassblower_menu");
 
     public static final RegistryObject<MenuType<KilnMenu>> KILN_MENU =
             regesterMenuType(KilnMenu::new, "kiln_menu");

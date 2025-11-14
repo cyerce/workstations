@@ -1,4 +1,13 @@
 package net.aepherastudios.workstations.recipe.recipies.books;
 
-public class GlassblowingRecipebookComponent {
+import net.minecraft.client.gui.screens.recipebook.AbstractFurnaceRecipeBookComponent;
+import net.minecraft.world.item.Item;
+
+import java.util.Set;
+
+public class GlassblowingRecipebookComponent extends AbstractFurnaceRecipeBookComponent {
+    @Override
+    protected Set<Item> getFuelItems() {
+        return Set.of();
+    }
 }

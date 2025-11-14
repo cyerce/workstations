@@ -4,8 +4,13 @@ import com.mojang.logging.LogUtils;
 import net.aepherastudios.workstations.block.IWBlockEntities;
 import net.aepherastudios.workstations.block.IWBlocks;
 import net.aepherastudios.workstations.client.IWMenuTypes;
+import net.aepherastudios.workstations.client.screen.custom.CokingOvenScreen;
+import net.aepherastudios.workstations.client.screen.custom.GlassblowerScreen;
+import net.aepherastudios.workstations.client.screen.custom.KilnScreen;
 import net.aepherastudios.workstations.item.IWItems;
 import net.aepherastudios.workstations.recipe.IWRecipies;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -53,6 +58,11 @@ public class ImprovedWorkstations {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            event.enqueueWork(()->{
+                MenuScreens.register(IWMenuTypes.COKING_OVEN_MENU.get(), CokingOvenScreen::new);
+                MenuScreens.register(IWMenuTypes.GLASSBLOWER_MENU.get(), GlassblowerScreen::new);
+                MenuScreens.register(IWMenuTypes.KILN_MENU.get(), KilnScreen::new);
+            });
         }
     }
 }
