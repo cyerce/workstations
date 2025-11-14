@@ -1,3 +1,10 @@
 {
-  "block.workstations.oak_toggle_button": "Forester"
+  "block.workstations.kiln": "Kiln",
+  "block.workstations.coking_oven": "Coking Oven",
+  "block.workstations.glassblower": "Glassblower",
+
+  "container.workstations.kiln": "Kiln",
+  "container.workstations.coking_oven": "Coking Oven",
+  "container.workstations.glassblower": "Glassblower"
+
 }
